@@ -14,7 +14,7 @@ py --version
 
 Resultado de la verificación:
 
-![Verificación de Python](assets/1-verificacion-python.png)
+![Verificación de Python](assets/verificacion-python.png)
 
 También se puede consultar la versión instalada desde el sistema operativo:
 
@@ -30,7 +30,7 @@ cd ruta/del/proyecto
 
 Ejemplo del acceso a la ruta:
 
-![Acceso a la ruta](assets/2-acceso-ruta.png)
+![Acceso a la ruta](assets/acceso-ruta.png)
 
 ---
 
@@ -44,7 +44,7 @@ py -m venv env
 
 Ejecución del comando:
 
-![Creación del entorno virtual](assets/3-creacion-venv.png)
+![Creación del entorno virtual](assets/creacion-venv.png)
 
 ---
 
@@ -54,7 +54,7 @@ Al ejecutarse correctamente el comando, se crea la carpeta `env`, la cual contie
 
 Contenido interno del entorno virtual:
 
-![Estructura del entorno virtual](assets/4-estructura-venv.png)
+![Estructura del entorno virtual](assets/estructura-venv.png)
 
 ---
 
@@ -68,7 +68,7 @@ Para comenzar a trabajar dentro del entorno virtual, se debe activar desde Power
 
 Proceso de activación:
 
-![Activación del entorno virtual](assets/5-activacion-venv.png)
+![Activación del entorno virtual](assets/activacion-venv.png)
 
 Cuando el entorno se encuentra activo, el nombre `(env)` aparece al inicio de la línea de comandos.
 
@@ -77,3 +77,4 @@ Cuando el entorno se encuentra activo, el nombre `(env)` aparece al inicio de la
 ## Conclusión
 
 El uso de entornos virtuales en Python es una práctica fundamental para el desarrollo de proyectos, ya que permite mantener las dependencias aisladas, mejorar la organización del código y facilitar el trabajo académico y profesional.
+
