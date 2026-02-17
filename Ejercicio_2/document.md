@@ -129,6 +129,7 @@ El resultado final del conversor con las tres salidas juntas se ve así:
 📦 calculadora-conversora/
 ├── 📄 calculadora_conversor.py   # Script principal
 ├── 📄 README.md                  # Documentación
+├── 📄 DOCX_Calculadora_conversora_en_Python.docx   # Documentación en mis palabras
 └── 📁 assets/                    # Capturas de pantalla
     ├── 1.png
     ├── 2.png
@@ -143,4 +144,5 @@ El resultado final del conversor con las tres salidas juntas se ve así:
 Hecho con ❤️ en Python
 
 </div>
+
 
