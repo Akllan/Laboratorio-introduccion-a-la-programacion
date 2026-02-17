@@ -115,11 +115,11 @@ Así, si el residuo es `10`, `hexadecimal[10]` devuelve `'A'`; si es `14`, devue
 
 Por último, se declara la variable `numero` con un `input()` fuera de cualquier función y se mandan a imprimir las tres conversiones:
 
-![Entrada del usuario y llamada a las tres funciones](assets/11.png)
+![Entrada del usuario y llamada a las tres funciones](assets/12.png)
 
 El resultado final del conversor con las tres salidas juntas se ve así:
 
-![Resultado final del conversor completo](assets/12.png)
+![Resultado final del conversor completo](assets/11.png)
 
 ---
 
@@ -143,3 +143,4 @@ El resultado final del conversor con las tres salidas juntas se ve así:
 Hecho con ❤️ en Python
 
 </div>
+
