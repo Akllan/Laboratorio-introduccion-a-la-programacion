@@ -20,8 +20,7 @@
   - [Decimal a Binario](#decimal-a-binario-base-2)
   - [Decimal a Octal](#decimal-a-octal-base-8)
   - [Decimal a Hexadecimal](#decimal-a-hexadecimal-base-16)
-- [Uso](#-uso)
-- [Ejemplos](#-ejemplos)
+- [Uso y Ejemplos](#-uso-y-ejemplos)
 
 ---
 
@@ -46,41 +45,51 @@ Este script de Python convierte números decimales enteros a sus representacione
 
 ### Decimal a Binario (Base 2)
 
-Se declara la función `dec_bin()` que recibe un número entero. Primero se inicializa la variable `binario` como string vacío, lo que facilita construir el resultado al final. Si el número ingresado es `0`, se retorna directamente `"0"`.
+Vista general del código de la función `dec_bin()`:
+
+![Código completo función dec_bin](assets/1.png)
+
+Se declara la función `dec_bin()` que recibe un número entero. Dentro de ella, primero se agrega la variable `numero` como parámetro y se inicializa `binario` como string vacío:
+
+![Declaración de la función y parámetro](assets/2.png)
+
+> 💡 La variable `binario` se declara como string vacío para poder concatenar los residuos directamente y construir el resultado de forma sencilla.
+
+![Inicialización de la variable binario](assets/3.png)
+
+Después se maneja el caso especial: si el número ingresado es `0`, simplemente se retorna `"0"` de inmediato:
+
+![Caso especial si numero == 0](assets/4.png)
+
+Ahora viene el cálculo principal. Se ejecuta un bucle `while` que corre mientras el número sea mayor a `0`. En cada iteración:
+1. Se calcula el **residuo** con `% 2` — siempre retorna `0` o `1`
+2. Se **actualiza el número** con división entera `// 2` para seguir dividiendo sin decimales
+3. El residuo se **convierte a string** y se antepone a `binario` para que quede en el orden correcto al final
 
 ```python
-def dec_bin(numero):
-    binario = ""
-    if numero == 0:
-        return "0"
+while numero > 0:
+    residuo = numero % 2
+    numero = numero // 2
+    binario = str(residuo) + binario
 ```
 
-![Declaración función binario](assets/1.png)
+![Bucle while con el algoritmo principal](assets/5.png)
 
-> 💡 La variable `binario` se declara como string vacío para poder concatenar los residuos directamente.
+Para usar la función, se solicita el número con `input()` y se imprime el resultado:
 
-![Inicialización variable](assets/2.png)
+![Input y llamada a la función](assets/6.png)
 
-Luego se ejecuta un bucle `while` que sigue mientras el número sea mayor a 0. En cada iteración:
-1. Se calcula el **residuo** con el operador módulo `% 2` (siempre da `0` o `1`)
-2. Se **actualiza el número** con división entera `// 2` para continuar el proceso
-3. El residuo se **antepone** al string `binario` para que quede en el orden correcto
+La salida en consola se ve así:
 
-![Caso especial cero](assets/3.png)
-
-![Bucle while - algoritmo principal](assets/4.png)
-
-Al terminar el bucle, se retorna `binario` con la representación completa.
-
-![Resultado completo función binario](assets/7.png)
+![Salida en consola - resultado binario](assets/7.png)
 
 ---
 
 ### Decimal a Octal (Base 8)
 
-La lógica es **exactamente igual** que para binario, con la única diferencia de que la base cambia de `2` a `8`. El operador módulo `% 8` ahora puede retornar valores del `0` al `7`, y la división entera se hace entre `8`.
+La lógica es **exactamente la misma** que para binario, con la única diferencia de que la base cambia de `2` a `8`. El operador `% 8` ahora retorna valores del `0` al `7`, y la división entera se realiza entre `8`:
 
-![Función decimal a octal](assets/12.png)
+![Función decimal a octal completa](assets/8.png)
 
 > 🔄 Mismo algoritmo, distinta base. Si entendiste binario, ¡ya entendiste octal!
 
@@ -88,63 +97,29 @@ La lógica es **exactamente igual** que para binario, con la única diferencia d
 
 ### Decimal a Hexadecimal (Base 16)
 
-Esta conversión tiene una particularidad: los valores del `10` al `15` se representan con letras (`A` al `F`). Para resolver esto sin usar múltiples condicionales, se declara una **cadena de caracteres** que mapea cada posición con su símbolo correcto:
+Esta conversión tiene una particularidad: los valores del `10` al `15` se representan con letras (`A` al `F`). Para evitar múltiples condicionales, se declara una **cadena de caracteres** que mapea automáticamente cada posición con su símbolo:
 
 ```python
 hexadecimal = "0123456789ABCDEF"
 ```
 
-![Cadena hexadecimal](assets/8.png)
+![Declaración de la cadena hexadecimal](assets/9.png)
 
-De esta forma, si el residuo es `10`, `hexadecimal[10]` devuelve `'A'`; si es `11`, devuelve `'B'`, y así sucesivamente. El algoritmo es el mismo que los anteriores pero usando `% 16` y `// 16`.
+Así, si el residuo es `10`, `hexadecimal[10]` devuelve `'A'`; si es `14`, devuelve `'E'`, etc. El algoritmo usa `% 16` y `// 16`, y en esta función **no es necesario** manejar el caso especial del `0` porque ya está incluido como primer elemento de la cadena.
 
-![Bucle función hexadecimal](assets/11.png)
-
-> 📝 En esta función **no es necesario** manejar el caso especial del `0` porque el `0` ya está incluido como primer elemento de la cadena `hexadecimal`.
+![Bucle y lógica de la función hexadecimal](assets/10.png)
 
 ---
 
-## 🚀 Uso
+## 🚀 Uso y Ejemplos
 
-### Requisitos
+Por último, se declara la variable `numero` con un `input()` fuera de cualquier función y se mandan a imprimir las tres conversiones:
 
-- Python 3.x
+![Entrada del usuario y llamada a las tres funciones](assets/11.png)
 
-### Ejecución
+El resultado final del conversor con las tres salidas juntas se ve así:
 
-```bash
-python calculadora_conversor.py
-```
-
-Al ejecutarlo, el programa pedirá un número entero por consola y mostrará los tres resultados:
-
-![Input y llamada a funciones](assets/10.png)
-
----
-
-## 📊 Ejemplos
-
-### Entrada de usuario
-
-Al ejecutar el script se muestra un prompt solicitando el número:
-
-![Ejemplo de entrada](assets/9.png)
-
-### Resultado de la conversión
-
-El programa imprime los tres resultados uno debajo del otro:
-
-**Resultado Binario y Octal:**
-
-![Salida binario](assets/6.png)
-
-**Resultado Hexadecimal:**
-
-![Salida hexadecimal](assets/5.png)
-
-**Vista completa del conversor:**
-
-![Resultado final completo](assets/3.png)
+![Resultado final del conversor completo](assets/12.png)
 
 ---
 
@@ -155,7 +130,10 @@ El programa imprime los tres resultados uno debajo del otro:
 ├── 📄 calculadora_conversor.py   # Script principal
 ├── 📄 README.md                  # Documentación
 └── 📁 assets/                    # Capturas de pantalla
-    ├── 1.png  → 12.png
+    ├── 1.png
+    ├── 2.png
+    ├── ...
+    └── 12.png
 ```
 
 ---
