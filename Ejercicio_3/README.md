@@ -33,7 +33,7 @@ python login.py
 
 Primero se declara la variable `intentos = 0` que será usada para controlar el bucle `while`.
 
-![Variable intentos](assets/variableintetos.png)
+![Variable intentos](assets/variableintentos.png)
 
 ---
 
@@ -149,5 +149,6 @@ Proyecto de práctica — **Lab de Programación** · Ejercicio 3
 <div align="center">
 
 Hecho con ❤️ en Python
+
 
 </div>
